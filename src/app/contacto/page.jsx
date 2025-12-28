@@ -39,8 +39,9 @@ export default function Contacto() {
           </h1>
           <br />
           <h4 className="textoNormalResposivo">
-            Únete a un equipo de desarrolladores experimentados. Transformamos
-            ideas en productos reales, sin importar tu país ni huso horario.
+  <li>Correo : nicolas.machucadev@gmail.com</li>
+  <li>Telefono : 932239282</li>
+  <li>GitHub: https://github.com/NiCode96 </li>
           </h4>
           <br />
           <br />

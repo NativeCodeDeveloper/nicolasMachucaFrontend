@@ -1,5 +1,4 @@
 "use client";
-import Divider from "@mui/material/Divider";
 import { Michroma } from "next/font/google";
 import GradientText from "@/componentes/GradientText";
 const michroma = Michroma({ subsets: ["latin"], weight: "400" });
@@ -14,7 +13,7 @@ import Aurora from "@/componentes/Aurora";
 
 export default function Portada() {
   return (
-    <div>
+    <div className="min-h-screen">
       
       <div>
         <Aurora></Aurora>
@@ -52,7 +51,28 @@ export default function Portada() {
          
           </h1>
         </div>
-        
+
+        {/* Mobile CTA under orb (not sticky) */}
+        <div className="block sm:hidden mt-4 px-4 flex justify-center">
+          <div className="w-full max-w-md rounded-2xl border border-white/10 bg-white/10 p-2 backdrop-blur-md">
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="/contacto"
+                className="inline-flex items-center justify-center rounded-xl bg-purple-900 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-purple-900 active:scale-[0.98]"
+                aria-label="Contactar"
+              >
+                Contactar
+              </a>
+              <a
+                href="/servicios"
+                className="inline-flex items-center justify-center rounded-xl border border-indigo-400/30 bg-transparent px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur-sm transition hover:bg-white/10 hover:text-white active:scale-[0.98]"
+                aria-label="Ver portafolio"
+              >
+                Ver portafolio
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
     

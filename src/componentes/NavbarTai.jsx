@@ -10,15 +10,8 @@ export default function NavbarTai() {
 
   return (
     <div className="w-full p-6 text-base md:text-2xl font-bold">
-      {/* Mobile: solo Contacto, perfectamente centrado */}
-      <div className="md:hidden w-full flex justify-center">
-        <Link href={'/contacto'} className="block">
-          <BotoinMui contenido={contacto} />
-        </Link>
-      </div>
-
       {/* Desktop/Tablet: todos los botones centrados en fila */}
-      <div className="hidden md:flex flex-row justify-center items-center gap-8">
+      <div className="hidden lg:flex flex-row justify-center items-center gap-8">
         <Link href={'/comprar'} className="shrink-0">
           <BotoinMui contenido={contratar} />
         </Link>

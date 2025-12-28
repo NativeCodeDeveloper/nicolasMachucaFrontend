@@ -1,87 +1,234 @@
-"use client";
-
-import CardLong from "@/componentes/CardLong";
-import { Button } from "bootstrap";
-import BotonMui from "@/componentes/BotonMui"
-
-export default function Servicios() {
-  const titulo1 = "Medify - Gestión Clínica";
-  const descripcion1 =
-    "Solución web para comercializar y operar sistemas de gestión clínica: agenda, pacientes, fichas y reportes. Frontend en React + Next.js con Tailwind CSS y MUI; backend Node.js (Express) con JavaScript y MySQL para persistencia y consultas optimizadas.";
-  const imagen1 = "/paginasweb.jpg";
-
-  const titulo2 = "JPA INGENIERÍA";
-  const descripcion2 =
-    "Plataforma web tipo landing page para una sociedad de ingeniería civil, enfocada en captación de clientes y presentación de servicios. Frontend con React, Bootstrap y Tailwind CSS; backend Node.js (Express) en JavaScript con MySQL para contacto, cotizaciones y administración básica.";
-  const imagen2 = "/landing.jpg";
-
-  const titulo3 = "Matrona Online";
-  const descripcion3 =
-    "Plataforma web multipágina para una sociedad profesional de matronas: blog de publicaciones, agenda médica, gestión de pacientes, fichas clínicas, reportes y agendamiento online con integración de pasarelas de pago. Desarrollada con Next.js + React, Tailwind CSS y Bootstrap en el frontend; backend en JavaScript con Node.js (Express) y MySQL para la gestión de datos y operaciones clínicas.";
-  const imagen3 = "/ecomerce.jpg";
+"use client"
+import Image from 'next/image';
+import { Michroma } from "next/font/google";
+const michroma = Michroma({ subsets: ["latin"], weight: "400" });
 
 
 
-  const titulo5 = "Matrona Online";
-  const descripcion5 =
-    "Ofrecemos soluciones de desarrollo a medida según tus necesidades, ya sea una aplicación web, una intranet o un proyecto especial que requiera innovación.";
-  const imagen5 = "/images/servicios/personalizado.jpg";
-
-  return (
-    <div className="
-    grid grid-cols-1 p-12
-    w-full
-    bg-#1A0
-    ">
-      <h1 className="text text-4xl md:text-5xl lg:text-7xl font-black justify-center px-8 mb-8">
-        Proyectos Destacados
+export default function Portafolio(){
+  return(
+    <div>
+      <h1 className={`${michroma.className} py-10 text-4xl md:text-5xl text-center font-bold text-white`}>
+        Proyectos & Casos (Freelance)
       </h1>
+      <p className="max-w-2xl mx-auto mb-12 text-center text-white/80 text-lg">
+        Soy un desarrollador freelance que lleva ideas a producción con foco en <span className="font-semibold">performance</span>, <span className="font-semibold">UI/UX</span> y <span className="font-semibold">mantenibilidad</span>. A continuación, algunos proyectos donde aporté valor real.
+      </p>
 
-      <div className="
-      grid
-      grid-cols-1
-      md:grid-cols-3
-      lg:grid-cols-3
-      xl:grid-cols-3
-      justify-items-center
-      gap-8
-      bg-g
-
-      px-2 sm:px-4 md:px-2
-      py-2 sm:py-6 md:py-6
-
-      ">
-        <div>
-          <CardLong
-            imagen={imagen1}
-            titulo={titulo1}
-            descripcion={descripcion1}
-            pagina={"/paginasWeb"}
-          ></CardLong>
+      <section className="relative bg-neutral-900/40 ring-1 ring-white/10 rounded-4xl shadow-2xl backdrop-blur-sm px-6 md:px-10 lg:px-14 py-16 md:py-24">
+        <div className="mb-12 md:mb-16 space-y-6">
+          <h3 className="text-2xl md:text-3xl font-semibold leading-tight tracking-tight text-white">
+            Cómo aporto valor en proyectos reales
+          </h3>
+          <p className="text-white/80 text-base md:text-lg">
+            Trabajo de forma <span className="font-semibold text-indigo-300">remota</span> integrándome a equipos o liderando el desarrollo end-to-end. Me enfoco en flujos claros, código limpio y entregables medibles.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-white/90 text-sm md:text-base">
+            <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">+20 componentes UI reutilizables por proyecto</li>
+            <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">Mejoras de carga inicial &lt; 1s en landing</li>
+            <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">Integraciones: Next.js • Node/Express • SQL</li>
+          </ul>
         </div>
 
-        <div>
-          <CardLong
-            imagen={imagen2}
-            titulo={titulo2}
-            descripcion={descripcion2}
-            pagina={"/landingpages"}
-          ></CardLong>
+        {/* Cards del portafolio */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Proyecto Denisse */}
+          <a href="https://snowdream.vercel.app" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+              <Image
+                src="/snow.png"
+                alt="Proyecto Denisse"
+                width={600}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+              {/* Overlay negro difuminado y texto morado eléctrico */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                <div className="relative h-full w-full flex items-end justify-center p-6">
+                  <p className="text-white text-lg md:text-xl font-semibold text-center">
+                    E-Commerce - SnowDreams
+                    <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: diseño UI centrado en conversión, optimización de imágenes y critical CSS para mejorar tiempos de carga y tasa de conversión del checkout.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+
+            <a href="https://dennisbeltran.medifyclinic.cl" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                    <Image
+                        src="/denis.png"
+                        alt="Proyecto Denisse"
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                    />
+                    {/* Overlay negro difuminado y texto morado eléctrico */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                        <div className="relative h-full w-full flex items-end justify-center p-6">
+                            <p className="text-white text-lg md:text-xl font-semibold text-center">
+                                Deniss Beltrán — Psicóloga / Agenda Online
+                                <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: implementación de sistema de reservas accesible, optimización móvil de formularios y mejora de la experiencia de agendamiento.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+
+
+            <a href="https://www.repuestosmacar.cl" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                    <Image
+                        src="/macar.png"
+                        alt="Proyecto Denisse"
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                    />
+                    {/* Overlay negro difuminado y texto morado eléctrico */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                        <div className="relative h-full w-full flex items-end justify-center p-6">
+                            <p className="text-white text-lg md:text-xl font-semibold text-center">
+                                E-Commerce - MaCar Repuestos Automotrices
+                                <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: catálogo escalable con búsqueda y filtros rápidos, optimización SEO técnico y reducción de peso de las páginas de producto.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+
+            <a href="https://supletech-fronend.vercel.app" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                    <Image
+                        src="/suple.png"
+                        alt="Proyecto Denisse"
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                    />
+                    {/* Overlay negro difuminado y texto morado eléctrico */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                        <div className="relative h-full w-full flex items-end justify-center p-6">
+                            <p className="text-white text-lg md:text-xl font-semibold text-center">
+                                E-Commerce - Suplementos Deportivos
+                                <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: diseño orientado a conversión, integración con pasarelas de pago y optimización de recursos para mejorar el rendimiento en móviles.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+
+
+            <a href="https://coco-fit-front-end-git-main-nativecodes-projects-fbcce9f5.vercel.app" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                    <Image
+                        src="/coco.png"
+                        alt="Proyecto Denisse"
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                    />
+                    {/* Overlay negro difuminado y texto morado eléctrico */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                        <div className="relative h-full w-full flex items-end justify-center p-6">
+                            <p className="text-white text-lg md:text-xl font-semibold text-center">
+                                E-commerce - Ropa Deportiva
+                                <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: implementación responsive completa, microinteracciones y optimización de carga de assets.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+
+
+            <a href="https://runajoyas.cl" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                  <Image
+                    src="/runa.png"
+                    alt="Proyecto Denisse"
+                    width={600}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                  />
+                  {/* Overlay negro difuminado y texto morado eléctrico */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                    <div className="relative h-full w-full flex items-end justify-center p-6">
+                      <p className="text-white text-lg md:text-xl font-semibold text-center">
+                        E-commerce - Joyeria Deportiva
+                        <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: experiencia visual de producto, optimización de imágenes y mejora de accesibilidad para aumentar la conversión.</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+            </a>
+
+
+
+
+
+
+            <a href="https://www.medifyclinic.cl" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                    <Image
+                        src="/medify.png"
+                        alt="Proyecto Denisse"
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                    />
+                    {/* Overlay negro difuminado y texto morado eléctrico */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                        <div className="relative h-full w-full flex items-end justify-center p-6">
+                            <p className="text-white text-lg md:text-xl font-semibold text-center">
+                                Plataforma de Clínica Digital
+                                <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: diseño de flujos de paciente, formularios seguros, integraciones con APIs y optimización de rendimiento en páginas críticas.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            <a href="https://jpaingenieriasolutions.cl" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+                    <Image
+                        src="/jpq.png"
+                        alt="Proyecto Denisse"
+                        width={600}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                    />
+                    {/* Overlay negro difuminado y texto morado eléctrico */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+                        <div className="relative h-full w-full flex items-end justify-center p-6">
+                            <p className="text-white text-lg md:text-xl font-semibold text-center">
+                                Landing Page Servicios de Ingeneiria
+                                <span className="block text-sm font-normal text-white/90">Rol: Frontend • Aporte: landing optimizada para generación de leads, velocidad en móvil y soporte para campañas de marketing.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
         </div>
-
-        <div>
-          <CardLong
-            imagen={imagen3}
-            titulo={titulo3}
-            descripcion={descripcion3}
-            pagina={"/eCommerce"}
-          ></CardLong>
-        </div>
-
-  
-      </div>
-
-     <BotonMui  contenido={"otros"}></BotonMui>
+      </section>
     </div>
-  );
+  )
 }

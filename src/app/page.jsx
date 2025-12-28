@@ -16,28 +16,24 @@ export default function Home() {
         <Portada></Portada>
       </div>
       <div
-        className=" 
-      bg-[url('/wall3.png')] bg-cover 
-      w-full 
-     
-      grid grid-cols-1 md:grid-cols-5
-      justify-center
-      rounded-4xl
-      "
+        className="bg-[url('/wall3.png')] bg-cover bg-center bg-no-repeat w-full grid grid-cols-1 md:grid-cols-5 items-center justify-center rounded-4xl min-h-[60vh] py-12"
       >
-        <div className="col-span-4">
+       <div className="col-span-4 self-center">
           <div className="mt-12">
-            <h2 className="text-3xl md:text-6xl font-bold p-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-             Acerca <strong>de</strong> 
+            <h2 className="text-4xl md:text-6xl font-extrabold px-12 text-white tracking-tight">
+              <span className="bg-gradient-to-r from-indigo-400 to-cyan-300 bg-clip-text text-transparent">Acerca de</span>
             </h2>
-            <p className="text-2xl md:text-3xl   p-12">
-      Soy un desarrollador en constante crecimiento, motivado por el aprendizaje continuo y la incorporación de nuevas tecnologías. Me interesa integrarme a un equipo de trabajo donde pueda aportar con mis conocimientos, colaborar en proyectos desafiantes y al mismo tiempo seguir potenciando mis habilidades técnicas y profesionales.
-
+            <p className="text-lg md:text-2xl leading-relaxed px-12 mt-6 text-white/90">
+              Soy un desarrollador en constante crecimiento, motivado por el aprendizaje continuo y la incorporación de nuevas tecnologías. 
+              Cuento con <span className="font-semibold text-indigo-300">disponibilidad para trabajar de manera remota</span> y un alto interés en integrarme a proyectos de empresas donde pueda 
+              aportar valor, colaborar en desafíos tecnológicos y seguir potenciando mis habilidades técnicas y profesionales. 
+              Mi objetivo es crecer junto al equipo, aportar soluciones innovadoras y mantener siempre un compromiso con la excelencia.
             </p>
             <br />
             <br />
           </div>
-          <div className="flex justify-end mr-6 mb-20">
+          <div className="border-t border-white/10 mx-12 mt-12"></div>
+          <div className="flex justify-center md:justify-end mr-6 mb-20">
             <Link href={"/comprar"}>
               <BotonBlanco contenido={"Contacto"} />
             </Link>
@@ -64,38 +60,37 @@ export default function Home() {
       </div>
 
       <div
-        className="      bg-[url('/wallet.png')] bg-cover 
-      w-full 
-     
-      grid grid-cols-1 md:grid-cols-5
-      justify-center
-      rounded-4xl
-      my-60
-      "
+        className="bg-[url('/wallet.png')] bg-cover bg-center bg-no-repeat w-full grid grid-cols-1 md:grid-cols-5 items-center justify-center rounded-4xl min-h-[60vh] py-12 my-60"
       >
-        <div className="col-span-4 mt-12">
-          <div className="mt-12">
-            <h2 className="text-3xl md:text-6xl font-bold p-12 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-             Otras <strong className="text-cyan-300">Habilidades</strong>{" "}
-              
-            </h2>
-            <p className="text-2xl md:text-3xl   p-12">
-<li>Administración de servidores Windows.</li>
-<li>Gestión y configuración de firewalls.</li>
-<li>Manejo general de consola en Linux.</li>
-<li>Despliegue de aplicativos en VPS y servicios serverless (Vercel, Railway, AWS Lambda).</li>
-<li>Modelamiento y consultas en bases de datos relacionales.</li>
-<li>Gestión de bases de datos en SQL Server.</li>
-            </p>
-            <br />
-            <br />
-          </div>
-          <div className="flex justify-end mr-6 mb-20">
-            <Link href={"/soporte"}>
-              <BotonBlanco contenido={"Plan de Soporte"} />
-            </Link>
-          </div>
-        </div>
+       <div className="col-span-4 self-center mt-8">
+         <div className="mt-12">
+           <h2 className="text-4xl md:text-6xl font-extrabold px-12 text-white tracking-tight">
+             <span className="bg-gradient-to-r from-cyan-300 to-indigo-400 bg-clip-text text-transparent">
+               Otras Habilidades
+             </span>
+           </h2>
+           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 px-12 mt-8 text-white/90 text-lg md:text-2xl leading-relaxed">
+             <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm hover:bg-white/10 transition">
+               Administración de servidores Windows
+             </li>
+             <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm hover:bg-white/10 transition">
+               Gestión y configuración de firewalls
+             </li>
+             <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm hover:bg-white/10 transition">
+               Manejo general de consola en Linux
+             </li>
+             <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm hover:bg-white/10 transition">
+               Despliegue de aplicativos en VPS y servicios serverless (Vercel, Railway, AWS Lambda)
+             </li>
+             <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm hover:bg-white/10 transition">
+               Modelamiento y consultas en bases de datos relacionales
+             </li>
+             <li className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm hover:bg-white/10 transition">
+               Gestión de bases de datos en SQL Server
+             </li>
+           </ul>
+         </div>
+       </div>
       </div>
 
       <div
